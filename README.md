@@ -29,7 +29,7 @@ License
 
     - Beta version of CRM v4 APIs.
   
-For older versions, please [refer](https://github.com/zoho/zohocrm-java-php-4.0/releases).
+For older versions, please [refer](https://github.com/zoho/zohocrm-php-sdk-4.0/releases).
 
 ## Including the SDK in your project
 You can include the SDK to your project using Composer.
