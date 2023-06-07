@@ -25,6 +25,44 @@ License
 
 
 ## Latest Version
+- [1.0.0](/versions/1.0.0/README.md)
+
+    - PHP SDK upgraded to support v4 APIs.
+
+    - Structural changes to aid the process of SDK configuration and initialization user-friendly.
+
+        - Handled Token Persistence
+
+        - Updated UserSignature from Mandatory to Optional(Moved to OAuthToken Class).
+
+        - user_mail key in DBStore and FileStore is updated to user_name.
+    
+    - PHP SDK improved to support the following new APIs
+
+        - [AssociateEmail](https://www.zoho.com/crm/developer/docs/api/v4/associate-email.html)
+        - [Backup](https://www.zoho.com/crm/developer/docs/api/v4/get-backup-info.html)
+        - [BusinessHours](https://www.zoho.com/crm/developer/docs/api/v4/get-business-hours.html)
+        - [CancelMeetings](https://www.zoho.com/crm/developer/docs/api/v4/meeting-cancel.html)
+        - [DealContactRoles](https://www.zoho.com/crm/developer/docs/api/v4/get-contact-roles-of-a-specific-deal.html)
+        - [DownloadEmailAttachmnets](https://www.zoho.com/crm/developer/docs/api/v4/download-email-attachments.html)
+        - [DownloadInlineImagesofanEmail](https://www.zoho.com/crm/developer/docs/api/v4/download-inline-images.html)
+        - [EmailSharing](https://www.zoho.com/crm/developer/docs/api/v4/get-email-shared-details.html)
+        - [EmailRelatedrecords](https://www.zoho.com/crm/developer/docs/api/v4/get-email-rel-list.html)
+        - [FieldMapDependency](https://www.zoho.com/crm/developer/docs/api/v4/get-map-dependency.html)
+        - [fromAddresses](https://www.zoho.com/crm/developer/docs/api/v4/get-from-addresses-list.html)
+        - [Holidays](https://www.zoho.com/crm/developer/docs/api/v4/get-holidays.html)
+        - [MassChangeOwner](https://www.zoho.com/crm/developer/docs/api/v4/mass-change-owner.html)
+        - [MassConvert](https://www.zoho.com/crm/developer/docs/api/v4/mass-convert-lead.html)
+        - [MassDeleteCVID](https://www.zoho.com/crm/developer/docs/api/v4/mass-delete.html)
+        - [Portals](https://www.zoho.com/crm/developer/docs/api/v4/get-portals.html)
+        - [PortalInvite](https://www.zoho.com/crm/developer/docs/api/v4/invite-user.html)
+        - [ShiftHours](https://www.zoho.com/crm/developer/docs/api/v4/get-shift-hours.html)
+        - [UserGroups](https://www.zoho.com/crm/developer/docs/api/v4/get-user-groups.html)
+        - [UserTerritories](https://www.zoho.com/crm/developer/docs/api/v4/get-user-territories.html)
+        - [UserType](https://www.zoho.com/crm/developer/docs/api/v4/get-user-types.html)
+        - [UserTypeUsers](https://www.zoho.com/crm/developer/docs/api/v4/get-users-user-type.html)
+
+
 - [1.0.0-beta](/versions/1.0.0-beta/README.md)
 
     - Beta version of CRM v4 APIs.
@@ -33,12 +71,11 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-php-sdk-4.0/r
 
 ## Including the SDK in your project
 You can include the SDK to your project using Composer.
-For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/1.0.0-beta) of PHP SDK, navigate to the workspace of your client app and run the following command.
+For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/1.0.0) of PHP SDK, navigate to the workspace of your client app and run the following command.
 
 ```sh
-composer require zohocrm/php-sdk-4.0:1.0.0-beta
+composer require zohocrm/php-sdk-4.0
 ```
 With this, the PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
 
-For more details, kindly refer here. [here](/versions/1.0.0-beta/README.md).
-
+For more details, kindly refer here. [here](/versions/1.0.0/README.md).
