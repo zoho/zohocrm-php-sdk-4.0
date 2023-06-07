@@ -33,7 +33,7 @@ License
 
         - Handled Token Persistence
 
-        - Updated UserSignature from Mandatory to Optional.
+        - Updated UserSignature from Mandatory to Optional(Moved to OAuthToken Class).
 
         - user_mail key in DBStore and FileStore is updated to user_name.
     
