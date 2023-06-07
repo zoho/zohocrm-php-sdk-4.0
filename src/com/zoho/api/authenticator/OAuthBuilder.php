@@ -2,6 +2,8 @@
 
 namespace com\zoho\api\authenticator;
 
+use com\zoho\crm\api\UserSignature;
+
 use com\zoho\crm\api\util\Utility;
 
 use com\zoho\crm\api\util\Constants;
@@ -23,6 +25,8 @@ class OAuthBuilder
     private $accessToken;
 
     private $id;
+
+    private $userSignature = null;
 
     public function id($id)
     {
@@ -77,13 +81,36 @@ class OAuthBuilder
         return $this;
     }
 
+    /**
+     * @param UserSignature $userSignature
+     * @return $this
+     */
+    public function userSignature(UserSignature $userSignature)
+    {
+        $this->userSignature = $userSignature;
+
+        return $this;
+    }
+
     public function build()
     {
-        if($this->grantToken == null && $this->refreshToken == null && $this->id == null && $this->accessToken == null)
+        if($this->grantToken == null && $this->refreshToken == null && $this->id == null && $this->accessToken == null && $this->userSignature == null)
         {
-            throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . "-" . Constants::OAUTH_MANDATORY_KEYS);
+            throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . "-" . join(", ", Constants::OAUTH_MANDATORY_KEYS));
         }
+        if ($this->grantToken != null || $this->refreshToken != null)
+        {
+            if ($this->clientID == null && $this->clientSecret == null)
+            {
+                throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . "-" . join(", ", Constants::OAUTH_MANDATORY_KEYS1));
+            }
+            else
+            {
+                Utility::assertNotNull($this->clientID, Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . " - " . Constants::CLIENT_ID);
 
+                Utility::assertNotNull($this->clientSecret, Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . " - " . Constants::CLIENT_SECRET);
+            }
+        }
         $class = new \ReflectionClass(OAuthToken::class);
 
         $constructor = $class->getConstructor();
@@ -92,7 +119,7 @@ class OAuthBuilder
 
         $object = $class->newInstanceWithoutConstructor();
 
-        $constructor->invoke($object, $this->clientID, $this->clientSecret, $this->grantToken, $this->refreshToken, $this->redirectURL, $this->id, $this->accessToken);
+        $constructor->invoke($object, $this->clientID, $this->clientSecret, $this->grantToken, $this->refreshToken, $this->redirectURL, $this->id, $this->accessToken, $this->userSignature);
 
         return $object;
     }
