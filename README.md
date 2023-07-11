@@ -88,7 +88,7 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-php-sdk-4.0/r
 
 ## Including the SDK in your project
 You can include the SDK to your project using Composer.
-For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/1.1.0) of PHP SDK, navigate to the workspace of your client app and run the following command.
+For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/2.0.0) of PHP SDK, navigate to the workspace of your client app and run the following command.
 
 ```sh
 composer require zohocrm/php-sdk-4.0
