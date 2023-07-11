@@ -25,6 +25,19 @@ License
 
 
 ## Latest Version
+
+- [2.0.0](/versions/2.0.0/README.md)
+
+    - PHP SDK support DateTimeZone type.
+    - PHP SDK DBStore, FileStore, and OAuthToken class Enhancement.
+    - Changed ShiftHour $timezone field type.
+    - Changed User $timezone field type.
+    - Update __Construct() function:
+        - DownloadAttachmentsOperations
+        - DownloadInlineImagesOperations
+        - PortalInviteOperations
+        - UserTypeUsersOperations
+
 - [1.1.0](/versions/1.1.0/README.md)
 
     - PHP SDK support Unicode value.
@@ -82,4 +95,4 @@ composer require zohocrm/php-sdk-4.0
 ```
 With this, the PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
 
-For more details, kindly refer here. [here](/versions/1.1.0/README.md).
+For more details, kindly refer here. [here](/versions/2.0.0/README.md).
