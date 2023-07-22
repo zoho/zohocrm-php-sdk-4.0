@@ -57,7 +57,7 @@ class ConvertLead
         $contacts->setId("3477061000012263005");
         $record1->setContacts($contacts);
         $assignTo = new User();
-        $assignTo->setId("3477061000000173021");
+        $assignTo->setId("3477061173021");
         $record1->setAssignTo($assignTo);
         $deals = new $recordClass();
         /*

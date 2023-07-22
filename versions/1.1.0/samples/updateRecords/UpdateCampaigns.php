@@ -41,7 +41,7 @@ class UpdateCampaigns
         $records = array();
         $recordClass = 'com\zoho\crm\api\record\Record';
         $record1 = new $recordClass();
-        $record1->setId("34000000342343");
+        $record1->setId("34342343");
         $record1->addFieldValue(Campaigns::CampaignName(), "New Campaign");
         $record1->addFieldValue(Campaigns::NumSent(), 10);
         $record1->addFieldValue(Campaigns::StartDate(), new \DateTime('2023-10-10'));

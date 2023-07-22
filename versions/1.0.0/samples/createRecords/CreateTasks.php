@@ -111,14 +111,14 @@ class CreateTasks
         $subform = new Record();
         $subform->addKeyValue("CustomField", "customValue");
         $user1 = new MinifiedUser();
-        $user1->setId("430300000032334334343");
+        $user1->setId("430332334334343");
         $subform->addKeyValue("UserField", $user1);
         array_push($subformList, $subform);
         $record1->addKeyValue("Subform_1", $subformList);
         // for MultiSelectLookUp/Custom MultiSelectLookup
         $multiselectList = array();
         $record = new Record();
-        $record->addKeyValue("id", "440248000000884001");
+        $record->addKeyValue("id", "440248884001");
         $linkingRecord = new Record();
         $linkingRecord->addKeyValue("Msl", $record);
         array_push($multiselectList, $linkingRecord);

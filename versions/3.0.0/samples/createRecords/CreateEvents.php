@@ -50,10 +50,10 @@ class CreateEvents
         $participant1 = new Participants();
         $participant1->setEmail("abc@gmail.com");
         $participant1->setType("email");
-        $participant1->setId("440248000000254001");
+        $participant1->setId("440248254001");
         array_push($participants, $participant1);
         $participant2 = new Participants();
-        $participant2->addKeyValue("participant", "34000000003242454");
+        $participant2->addKeyValue("participant", "34003242454");
         $participant2->addKeyValue("type", "lead");
         array_push($participants, $participant2);
         $record1->addFieldValue(Events::Participants(), $participants);
@@ -119,7 +119,7 @@ class CreateEvents
         $subform = new Record();
         $subform->addKeyValue("CustomField", "customValue");
         $user1 = new MinifiedUser();
-        $user1->setId("430300000032334334343");
+        $user1->setId("430332334334343");
         $subform->addKeyValue("UserField", $user1);
         array_push($subformList, $subform);
         $record1->addKeyValue("Subform_1", $subformList);

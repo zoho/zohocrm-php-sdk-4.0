@@ -37,7 +37,7 @@ class UpdateRole
         $role = new $roleClass();
         $role->setName("Product Manager3421");
         $reportingTo = new MinifiedUser();
-        $reportingTo->setId("3477061000000026005");
+        $reportingTo->setId("3477061026005");
         $role->setReportingTo($reportingTo);
         $role->setDescription("Schedule and manage resources");
         $role->setShareWithPeers(true);

@@ -44,9 +44,9 @@ class UpdatePurchaseOrders
         $records = array();
         $recordClass = 'com\zoho\crm\api\record\Record';
         $record1 = new $recordClass();
-        $record1->setId("3400000000000234324");
+        $record1->setId("3400000234324");
         $vendor = new Record();
-        $vendor->addFieldValue(Vendors::id(), "340000002354235234");
+        $vendor->addFieldValue(Vendors::id(), "342354235234");
         $record1->addFieldValue(Purchase_Orders::VendorName(), $vendor);
         $record1->addFieldValue(Purchase_Orders::Subject(), "new Order");
         $record1->addFieldValue(Purchase_Orders::Adjustment(), 30.0);
@@ -55,7 +55,7 @@ class UpdatePurchaseOrders
         $record1->addFieldValue(Purchase_Orders::PONumber(), "1223221");
         $record1->addFieldValue(Purchase_Orders::ExciseDuty(), 25.0);
         $vendor_name = new Record();
-        $vendor_name->setId("300000000324324");
+        $vendor_name->setId("300324324");
         $record1->addFieldValue(Purchase_Orders::VendorName(), $vendor_name);
         $record1->addFieldValue(Purchase_Orders::TrackingNumber(), "4231");
         $record1->addFieldValue(Purchase_Orders::SalesCommission(), 43.2);
