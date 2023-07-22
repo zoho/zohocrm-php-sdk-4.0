@@ -463,7 +463,9 @@ class JSONConverter extends Converter
             }
             else
             {
-                if ($customHandling && !(is_array($keyValue)) && !(gettype($keyValue) == Constants::MAP_NAMESPACE) && !($keyValue instanceof Choice))
+                if($keyValue != null)
+                {
+                    if ($customHandling && !(is_array($keyValue)) && !(gettype($keyValue) == Constants::MAP_NAMESPACE) && !($keyValue instanceof Choice))
                     {
                         if ($keyValue instanceof \DateTime )
                         {
@@ -494,24 +496,27 @@ class JSONConverter extends Converter
                             $jsonValue = $this->setData($keyDetail, $keyValue);
                         }
                     }
-                else {
-                    if ($customHandling && gettype($keyValue) == Constants::ARRAY_KEY)
+                    else 
                     {
-                        if (array_key_exists(get_class($keyValue[0]), Initializer::$jsonDetails))
+                        if ($customHandling && gettype($keyValue) == Constants::ARRAY_KEY)
                         {
-                            $keyDetail = json_encode(array(Constants::STRUCTURE_NAME => get_class($keyValue[0]), Constants::NAME => $keyName, Constants::TYPE => get_class($keyValue[0])));
-
-                            $keyDetail = json_decode($keyDetail, true);
-
-                            $jsonValue = $this->setJSONArray($keyValue, $keyDetail);
-                        }
+                            if (array_key_exists(get_class($keyValue[0]), Initializer::$jsonDetails))
+                            {
+                                $keyDetail = json_encode(array(Constants::STRUCTURE_NAME => get_class($keyValue[0]), Constants::NAME => $keyName, Constants::TYPE => get_class($keyValue[0])));
+    
+                                $keyDetail = json_decode($keyDetail, true);
+    
+                                $jsonValue = $this->setJSONArray($keyValue, $keyDetail);
+                            }
+                            else
+                            {
+                                $jsonValue = $this->redirectorForObjectToJSON($keyValue);
+                            }
+                        } 
                         else
                         {
                             $jsonValue = $this->redirectorForObjectToJSON($keyValue);
                         }
-                    } else
-                    {
-                        $jsonValue = $this->redirectorForObjectToJSON($keyValue);
                     }
                 }
             }

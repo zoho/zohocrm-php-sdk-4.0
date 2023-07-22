@@ -11,7 +11,7 @@ use com\zoho\crm\api\record\LineItemProduct;
 use com\zoho\crm\api\record\LineTax;
 use com\zoho\crm\api\record\RecordOperations;
 use com\zoho\crm\api\record\SuccessResponse;
-use com\zoho\crm\api\record\{Cases, Field, Solutions, Accounts, Campaigns, Calls, Leads, Tasks, Deals, Sales_Orders, Contacts, Quotes, Events, Price_Books, Purchase_Orders, Vendors};
+use com\zoho\crm\api\record\{Record, Leads, Deals, Sales_Orders, Contacts, Quotes, Purchase_Orders, Vendors};
 use com\zoho\crm\api\users\MinifiedUser;
 use com\zoho\crm\api\util\Choice;
 
@@ -45,8 +45,7 @@ class UpdateRecords
         $request = new BodyWrapper();
         //List of Record instances
         $records = array();
-        $recordClass = 'com\zoho\crm\api\record\Record';
-        $record1 = new $recordClass();
+        $record1 = new Record();
         $record1->setId("3477061000012260006");
         /*
          * Call addFieldValue method that takes two arguments
@@ -68,21 +67,21 @@ class UpdateRecords
         $recordOwner->setEmail("raja.k@zohocorp.com");
         $record1->addKeyValue("Owner", $recordOwner);
         /** Following methods are being used only by Inventory modules */
-        $vendorName = new $recordClass();
+        $vendorName = new Record();
         $vendorName->addFieldValue(Vendors::id(), "3477061000007247001");
         $record1->addFieldValue(Purchase_Orders::VendorName(), $vendorName);
-        $dealName = new $recordClass();
+        $dealName = new Record();
         $dealName->addFieldValue(Deals::id(), "3477061000012112003");
         $record1->addFieldValue(Sales_Orders::DealName(), $dealName);
-        $contactName = new $recordClass();
+        $contactName = new Record();
         $contactName->addFieldValue(Contacts::id(), "3477061000011383004");
         $record1->addFieldValue(Purchase_Orders::ContactName(), $contactName);
-        $accountName = new $recordClass();
+        $accountName = new Record();
         $accountName->addKeyValue("name", "automatedAccount");
         $record1->addFieldValue(Quotes::AccountName(), $accountName);
         $record1->addKeyValue("Discount", 10.5);
         $inventoryLineItemList = array();
-        $inventoryLineItem = new $recordClass();
+        $inventoryLineItem = new Record();
         $lineItemProduct = new LineItemProduct();
         // $lineItemProduct->setId("3477061000012260001");
         $lineItemProduct->addKeyValue("Products_External", "Products_External");
@@ -109,9 +108,16 @@ class UpdateRecords
         array_push($lineTaxes, $lineTax);
         $record1->addKeyValue('$line_tax', $lineTaxes);
         /** End Inventory **/
+
+        // Subform delete
+        $subform = new Record();
+        $subform->setID("34770619873");
+        $subform->addKeyValue("_delete", null);
+        $record1->addKeyValue("Subform_1", [$subform]);
+
         //Add Record instance to the list
         array_push($records, $record1);
-        $record2 = new $recordClass();
+        $record2 = new Record();
         $record2->setId("34770619873001");
         /*
          * Call addFieldValue method that takes two arguments

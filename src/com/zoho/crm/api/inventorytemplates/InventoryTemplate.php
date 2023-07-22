@@ -6,7 +6,7 @@ use com\zoho\crm\api\sendmail\Template;
 use com\zoho\crm\api\users\MinifiedUser;
 use com\zoho\crm\api\util\Model;
 
-class InventoryTemplate implements Template, Model
+class InventoryTemplate implements Model, Template
 {
 
 	private  $createdTime;
