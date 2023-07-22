@@ -55,7 +55,7 @@ class CreateQuotes
         $record1->addFieldValue(Quotes::TermsAndConditions(), "details of terms and Conditions");
         $record1->addFieldValue(Quotes::Description(), "description");
         $dealName = new Record();
-        $dealName->setId("3400000034234034");
+        $dealName->setId("3434234034");
         $record1->addFieldValue(Quotes::DealName(), $dealName);
         $contactName = new Record();
         $contactName->setId("345000003423434");
@@ -65,7 +65,7 @@ class CreateQuotes
         $inventoryLineItemList = array();
         $inventoryLineItem = new Record();
         $lineItemProduct = new LineItemProduct();
-        $lineItemProduct->setId("440248000000954344");
+        $lineItemProduct->setId("440248954344");
         $inventoryLineItem->addKeyValue("Description", "asd");
         $inventoryLineItem->addKeyValue("Discount", "5");
         $inventoryLineItem->addKeyValue("Quantity", 10.0);
@@ -76,7 +76,7 @@ class CreateQuotes
         $productLineTax = new LineTax();
         $productLineTax->setName("Vat");
         $productLineTax->setValue(10.0);
-        $productLineTax->setId("440248000000020810");
+        $productLineTax->setId("440248020810");
         $productLineTax->setPercentage(10.0);
         array_push($productLineTaxes, $productLineTax);
         $inventoryLineItem->addKeyValue("Line_Tax", $productLineTaxes);
@@ -142,14 +142,14 @@ class CreateQuotes
         $subform = new Record();
         $subform->addKeyValue("CustomField", "customValue");
         $user1 = new MinifiedUser();
-        $user1->setId("430300000032334334343");
+        $user1->setId("430332334334343");
         $subform->addKeyValue("UserField", $user1);
         array_push($subformList, $subform);
         $record1->addKeyValue("Subform_1", $subformList);
         // for MultiSelectLookUp/Custom MultiSelectLookup
         $multiselectList = array();
         $record = new Record();
-        $record->addKeyValue("id", "440248000000884001");
+        $record->addKeyValue("id", "440248884001");
         $linkingRecord = new Record();
         $linkingRecord->addKeyValue("Msl", $record);
         array_push($multiselectList, $linkingRecord);

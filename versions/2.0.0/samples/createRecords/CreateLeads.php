@@ -99,11 +99,11 @@ class CreateLeads
        $record1->addKeyValue("File_Upload", $fileDetails);
        //for Custom User LookUp
        $user = new MinifiedUser();
-       $user->setId("440248000000254001");
+       $user->setId("440248254001");
        $record1->addKeyValue("User_1", $user);
        //for Custom LookUp
        $data = new Record();
-       $data->setId("440248000000774074");
+       $data->setId("440248774074");
        $record1->addKeyValue("Lookup_1", $data);
        //for Custom PickList
        $record1->addKeyValue("Pick", new Choice("true"));
@@ -114,14 +114,14 @@ class CreateLeads
        $subform = new Record();
        $subform->addKeyValue("customfield", "customValue");
        $user1 = new MinifiedUser();
-       $user1->setId("440248000000254001");
+       $user1->setId("440248254001");
        $subform->addKeyValue("Userfield", $user1);
        array_push($subformList, $subform);
        $record1->addKeyValue("Subform_2", $subformList);
         //for MultiSelectLookUp/Custom MultiSelectLookup
        $multiselectList = array();
        $record = new Record();
-       $record->addKeyValue("id", "440248000000884001");
+       $record->addKeyValue("id", "440248884001");
        $linkingRecord = new Record();
        $linkingRecord->addKeyValue("MultiSelectLookup", $record);
        $record2 = new Record();

@@ -60,7 +60,7 @@ class UpdateContacts
         $record1->addFieldValue(Contacts::SecondaryEmail(), 'abc1@gmail.com');
         $record1->addFieldValue(Contacts::Twitter(), 'twitter_55');
         $account_name = new Record();
-        $account_name->setId("30000000243234002");
+        $account_name->setId("30243234002");
         $record1->addFieldValue(Contacts::AccountName(), $account_name);
         $vendor_name = new Record();
         $vendor_name->setId("300000432423423432");

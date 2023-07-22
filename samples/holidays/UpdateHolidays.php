@@ -52,7 +52,7 @@ class UpdateHolidays
         array_push($holidays, $holiday);
         $request->setHolidays($holidays);
         $headerInsatnce = new HeaderMap();
-        $headerInsatnce->add(UpdateHolidaysHeader::XCRMORG(), "440248000000020813");
+        $headerInsatnce->add(UpdateHolidaysHeader::XCRMORG(), "440248020813");
         $response = $holidaysOperations->updateHolidays($request, $headerInsatnce);
         if($response != null)
         {

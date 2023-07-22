@@ -54,13 +54,13 @@ class CreateDeals
         $record1->addFieldValue(Deals::LeadSource(), new Choice("Cold Call"));
         $record1->addFieldValue(Deals::Description(), 'description');
         $account_name = new Record();
-        $account_name->setId("440248000000884001");
+        $account_name->setId("440248884001");
         $record1->addFieldValue(Deals::AccountName(), $account_name);
         $contact_name = new Record();
         $contact_name->setId("440248000001030088");
         $record1->addFieldValue(Deals::ContactName(), $contact_name);
         $campaign_source = new Record();
-        $campaign_source->setId("30323230000000213");
+        $campaign_source->setId("30323230213");
         $record1->addFieldValue(Deals::AccountName(), $campaign_source);
         // used when GDPR is enabled
         $dataConsent = new Consent();
@@ -105,14 +105,14 @@ class CreateDeals
         $subform = new Record();
         $subform->addKeyValue("CustomField", "customValue");
         $user1 = new MinifiedUser();
-        $user1->setId("430300000032334334343");
+        $user1->setId("430332334334343");
         $subform->addKeyValue("UserField", $user1);
         array_push($subformList, $subform);
         $record1->addKeyValue("Subform_1", $subformList);
         // for MultiSelectLookUp/Custom MultiSelectLookup
         $multiselectList = array();
         $record = new Record();
-        $record->addKeyValue("id", "440248000000884001");
+        $record->addKeyValue("id", "440248884001");
         $linkingRecord = new Record();
         $linkingRecord->addKeyValue("Msl", $record);
         array_push($multiselectList,$linkingRecord);

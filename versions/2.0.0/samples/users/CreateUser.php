@@ -42,12 +42,12 @@ class CreateUser
         $userClass = "com\zoho\crm\api\users\User";
         $user1 = new $userClass();
         $role = new Role();
-        $role->setId("3477061000000026008");
+        $role->setId("3477061026008");
         $user1->setRole($role);
         $user1->setFirstName("TestUser");
         $user1->setEmail("testuser1234321@zoho.com");
         $profile = new Profile();
-        $profile->setId("3477061000000026014");
+        $profile->setId("3477061026014");
         $user1->setProfile($profile);
         $user1->setLastName("12");
         array_push($userList, $user1);

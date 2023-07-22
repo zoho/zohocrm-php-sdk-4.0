@@ -62,7 +62,7 @@ class UpdateSalesOrders
         $record1->addFieldValue(Sales_Orders::ExciseDuty(), 30.0);
         $record1->addFieldValue(Sales_Orders::Status(), new Choice("Created"));
         $deal_name = new Record();
-        $deal_name->setId("32000000000234");
+        $deal_name->setId("32000234");
         $record1->addFieldValue(Sales_Orders::DealName(), $deal_name);
         $contact_name = new Record();
         $contact_name->setId("34500900000324");

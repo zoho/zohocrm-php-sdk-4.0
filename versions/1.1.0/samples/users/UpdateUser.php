@@ -42,7 +42,7 @@ class UpdateUser
         $userClass = "com\zoho\crm\api\users\User";
         $user1 = new $userClass();
         $role = new Role();
-        $role->setId("3477061000000026008");
+        $role->setId("3477061026008");
         $user1->setRole($role);
         $user1->setCountryLocale("en_US");
         array_push($userList, $user1);

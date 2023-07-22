@@ -48,7 +48,7 @@ class CreateInvoices
         $record1 = new $recordClass();
         $pricingDetails = array();
         $accountName = new Record();
-        $accountName->addFieldValue(Accounts::id(), "34000000123423423");
+        $accountName->addFieldValue(Accounts::id(), "34123423423");
         $record1->addFieldValue(Invoices::AccountName(), $accountName);
         $record1->addFieldValue(Invoices::Subject(), "new Invoice");
         $record1->addFieldValue(Invoices::Adjustment(), 10.0);
@@ -65,14 +65,14 @@ class CreateInvoices
         $dealName->setId("3000002343553245");
         $record1->addKeyValue("Deal_Name__s", $dealName);
         $sales_order = new Record();
-        $sales_order->addFieldValue(Sales_Orders::id(), "300000034352342");
+        $sales_order->addFieldValue(Sales_Orders::id(), "334352342");
         $record1->addFieldValue(Invoices::SalesOrder(), $sales_order);
         $record1->addFieldValue(Invoices::TermsAndConditions(), "details of terms and conditions");
         $record1->addFieldValue(Invoices::Description(), "description");
         $inventoryLineItemList = array();
         $inventoryLineItem = new Record();
         $lineItemProduct = new LineItemProduct();
-        $lineItemProduct->setId("440248000000954344");
+        $lineItemProduct->setId("440248954344");
         $inventoryLineItem->addKeyValue("Description", "asd");
         $inventoryLineItem->addKeyValue("Discount", "5");
         $inventoryLineItem->addKeyValue("Quantity", 10.0);
@@ -83,7 +83,7 @@ class CreateInvoices
         $productLineTax = new LineTax();
         $productLineTax->setName("Vat");
         $productLineTax->setValue(10.0);
-        $productLineTax->setId("440248000000020810");
+        $productLineTax->setId("440248020810");
         $productLineTax->setPercentage(10.0);
         array_push($productLineTaxes, $productLineTax);
         $inventoryLineItem->addKeyValue("Line_Tax", $productLineTaxes);
@@ -149,14 +149,14 @@ class CreateInvoices
         $subform = new Record();
         $subform->addKeyValue("CustomField", "customValue");
         $user1 = new MinifiedUser();
-        $user1->setId("430300000032334334343");
+        $user1->setId("430332334334343");
         $subform->addKeyValue("UserField", $user1);
         array_push($subformList, $subform);
         $record1->addKeyValue("Subform_1", $subformList);
         // for MultiSelectLookUp/Custom MultiSelectLookup
         $multiselectList = array();
         $record = new Record();
-        $record->addKeyValue("id", "440248000000884001");
+        $record->addKeyValue("id", "440248884001");
         $linkingRecord = new Record();
         $linkingRecord->addKeyValue("Msl", $record);
         array_push($multiselectList, $linkingRecord);

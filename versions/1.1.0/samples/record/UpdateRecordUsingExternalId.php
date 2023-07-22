@@ -88,7 +88,7 @@ class UpdateRecordUsingExternalId
         array_push($fileDetails, $fileDetail3);
         $record1->addKeyValue("File_Upload", $fileDetails);
         $recordOwner = new MinifiedUser();
-        $recordOwner->setEmail("raja.k@zohocorp.com");
+        $recordOwner->setEmail("abc@zoho.com");
         $record1->addKeyValue("Owner", $recordOwner);
         //Used when GDPR is enabled
         $dataConsent = new Consent();
