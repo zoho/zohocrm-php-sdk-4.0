@@ -26,6 +26,11 @@ License
 
 ## Latest Version
 
+- [4.0.0](/versions/4.0.0/README.md)
+    
+    - Email related records API pagination Issue fixed.
+        - Handled ***next_index*** and ***prev_index*** field datatype.
+
 - [3.0.0](/versions/3.0.0/README.md)
 
     - Records APIs Issue fixed. 
@@ -93,11 +98,11 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-php-sdk-4.0/r
 
 ## Including the SDK in your project
 You can include the SDK to your project using Composer.
-For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/3.0.0) of PHP SDK, navigate to the workspace of your client app and run the following command.
+For installing the latest [version](https://github.com/zoho/zohocrm-php-sdk-4.0/releases/tag/4.0.0) of PHP SDK, navigate to the workspace of your client app and run the following command.
 
 ```sh
-composer require zohocrm/php-sdk-4.0:3.0.0
+composer require zohocrm/php-sdk-4.0:4.0.0
 ```
 With this, the PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
 
-For more details, kindly refer here. [here](/versions/3.0.0/README.md).
+For more details, kindly refer here. [here](/versions/4.0.0/README.md).
